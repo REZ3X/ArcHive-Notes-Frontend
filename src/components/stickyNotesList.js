@@ -1,7 +1,6 @@
 "use client";
 
-import React from 'react';
-import notesData from '../dummyData/notesDummy';
+import React, { useEffect, useState } from 'react';
 
 /**
  * Component that renders a list of sticky notes filtered by a search query.
@@ -11,7 +10,23 @@ import notesData from '../dummyData/notesDummy';
  * @returns {JSX.Element} The rendered component.
  */
 export default function StickyNotesList({ searchQuery = '' }) {
-    const notes = notesData().filter(note => {
+    const [notes, setNotes] = useState([]);
+
+    useEffect(() => {
+        async function fetchNotes() {
+            try {
+                const response = await fetch('http://localhost:5000/notes');
+                const data = await response.json();
+                setNotes(data);
+            } catch (error) {
+                console.error('Error fetching notes:', error);
+            }
+        }
+
+        fetchNotes();
+    }, []);
+
+    const filteredNotes = notes.filter(note => {
         const title = note.title || '';
         const content = note.content || '';
         return title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -20,13 +35,12 @@ export default function StickyNotesList({ searchQuery = '' }) {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            {notes.map(note => (
+            {filteredNotes.map(note => (
                 <div key={note.id} className="bg-white p-4 rounded shadow-md h-40 flex flex-col justify-between">
                     <div>
                         <h2 className="text-xl font-bold mb-2">{note.title}</h2>
                         <p>{note.content}</p>
                     </div>
-                    {note.projects && <span className="text-sm text-gray-500 mt-2">{note.projects}</span>}
                 </div>
             ))}
         </div>

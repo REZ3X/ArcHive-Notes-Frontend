@@ -49,9 +49,21 @@ export default function NotesInput() {
 
     const handleChange = (e) => setNote(e.target.value);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle note creation logic here
+        try {
+            const response = await fetch('http://localhost:5000/notes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: note })
+            });
+            const data = await response.json();
+            console.log('Note created:', data);
+        } catch (error) {
+            console.error('Error creating note:', error);
+        }
         setNote('');
         setIsFocused(false);
     };

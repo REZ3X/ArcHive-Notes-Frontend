@@ -1,5 +1,4 @@
-import React from 'react';
-import projectsData from '../dummyData/projectsDummy';
+import React, { useEffect, useState } from 'react';
 
 /**
  * Component that renders a list of projects.
@@ -12,7 +11,21 @@ import projectsData from '../dummyData/projectsDummy';
  * @returns {JSX.Element} A list of project titles.
  */
 export default function ProjectList() {
-    const projects = projectsData();
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        async function fetchProjects() {
+            try {
+                const response = await fetch('http://localhost:5000/projects');
+                const data = await response.json();
+                setProjects(data);
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            }
+        }
+
+        fetchProjects();
+    }, []);
 
     return (
         <ul className="mt-4">

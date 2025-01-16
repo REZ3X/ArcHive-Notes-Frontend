@@ -1,24 +1,18 @@
-"use client";
+"use client"; // Mark as a client component
 
-import React, { useState } from 'react';
-import LeftNavDesktop from '../components/navs/leftNavDesktop';
-import SearchBar from '../components/searchBar';
-import LogoutButton from '../components/logoutButton';
-import NotesInput from '../components/notesInput';
-import Footer from '../components/footer';
-import StickyNotesList from '../components/stickyNotesList';
+import React, { useState } from "react";
+import LeftNavDesktop from "@/components/navs/leftNavDesktop";
+import SearchBar from "@/components/searchBar";
+import LogoutButton from "@/components/logoutButton";
+import NotesInput from "@/components/notesInput";
+import Footer from "@/components/footer";
+import StickyNotesList from "@/components/stickyNotesList";
+import useAuth from "@/hooks/useAuth";
 
-/**
- * Home component renders the main layout of the application.
- * It includes a fixed left navigation bar, a search bar, a logout button,
- * an input for notes, a list of sticky notes filtered by the search query,
- * and a footer.
- *
- * @component
- * @returns {JSX.Element} The rendered component.
- */
 export default function Home() {
-    const [searchQuery, setSearchQuery] = useState('');
+    useAuth(); // Check for authentication
+
+    const [searchQuery, setSearchQuery] = useState("");
 
     return (
         <div className="flex">
