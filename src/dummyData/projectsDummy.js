@@ -7,7 +7,19 @@ const projectsData = () => [
     {
         id: 1,
         title: "React",
-    }
+    },
+    {
+        id: 2,
+        title: "Vue",
+    },
+    {
+        id: 4,
+        title: "Svelte",
+    },
+    {
+        id: 5,
+        title: "Ember",
+    },
 ]
 
 export default projectsData;

@@ -14,7 +14,7 @@ import React from 'react';
 export default function Footer() {
     return (
         <div className="text-center px-4 pt-4 font-nunito">
-            Made by <a className={`hover:underline text-blue-500`} href={`https://rejaka.me`} target={`_blank`}>rejaka.me</a>, using Next.js and Tailwind CSS
+            Made by <a className={`hover:underline text-blue-500`} href={`https://rejaka.me`} target={`_blank`}>rejaka.me</a>, using NextJS and NestJS
         </div>
     );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import projectsData from "@/dummyData/projectsDummy";
 
 /**
  * Component that renders a list of projects.
@@ -16,18 +17,8 @@ export default function ProjectList() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        async function fetchProjects() {
-            try {
-                const response = await fetch('http://localhost:5000/projects');
-                const data = await response.json();
-                setProjects(data);
-            } catch (error) {
-                console.error('Error fetching projects:', error);
-            }
-        }
-
-        fetchProjects();
-    }, []);
+        setProjects(projectsData());
+      }, []);
 
     return (
         <ul className="mt-4">

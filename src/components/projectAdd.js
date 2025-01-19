@@ -69,7 +69,7 @@ export default function ProjectAdd() {
     };
 
     return (
-        <div className="bg-white p-2 rounded shadow-md w-full font-nunito">
+        <div className="bg-white p-2 rounded w-full font-nunito">
             <form onSubmit={handleSubmit} className="flex flex-col items-center">
                 <button type="submit" className="w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-700 flex items-center justify-center mb-4">
                     <FaPlusCircle className="mr-2" />
