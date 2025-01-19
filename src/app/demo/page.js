@@ -8,6 +8,7 @@ import NotesInput from "@/components/notesInput";
 import Footer from "@/components/footer";
 import StickyNotesList from "@/components/demo/stickyNotesList";
 import AccountButton from "@/components/accountButton";
+import ThemeToggleButton from "@/components/themeToggleButton"
 
 /**
  * ShowOffHome component renders the same layout as the main page
@@ -30,6 +31,7 @@ export default function ShowOffHome() {
         <div className="flex justify-between items-center mb-4">
           <SearchBar setSearchQuery={setSearchQuery} />
           <div className="flex items-center space-x-4">
+          <ThemeToggleButton />
             <AccountButton />
             <LogoutButton />
           </div>
