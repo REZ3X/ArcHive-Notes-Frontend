@@ -23,7 +23,7 @@ export default function SearchBar({ setSearchQuery }) {
     };
 
     return (
-        <div className="flex items-center bg-white p-2 rounded shadow-md w-full h-10 max-w-md font-nunito">
+        <div className="flex items-center bg-white p-2 rounded shadow-md w-96 h-10 font-nunito">
             <FaSearch className="text-gray-600 mr-2" />
             <input
                 type="text"

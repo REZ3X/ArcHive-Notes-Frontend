@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import projectsData from "@/dummyData/projectsDummy";
+import projectsData from '@/dummyData/projectsDummy';
 
 /**
  * Component that renders a list of projects.
@@ -18,15 +18,18 @@ export default function ProjectList() {
 
     useEffect(() => {
         setProjects(projectsData());
-      }, []);
+    }, []);
 
     return (
-        <ul className="mt-4">
-            {projects.map(project => (
-                <li key={project.id} className="text-gray-800 mb-2">
-                    {project.title}
-                </li>
-            ))}
-        </ul>
+        <div>
+            <h2 className="text-xl font-bold mb-4">Projects</h2>
+            <ul className="mt-4">
+                {projects.map(project => (
+                    <li key={project.id} className="text-gray-800 mb-2">
+                        {project.title}
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 }

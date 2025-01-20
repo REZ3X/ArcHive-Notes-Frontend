@@ -73,7 +73,7 @@ export default function ProjectAdd() {
             <form onSubmit={handleSubmit} className="flex flex-col items-center">
                 <button type="submit" className="w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-700 flex items-center justify-center mb-4">
                     <FaPlusCircle className="mr-2" />
-                    New Projects
+                    New
                 </button>
                 {isFocused && (
                     <input
