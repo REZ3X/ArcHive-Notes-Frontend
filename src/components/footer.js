@@ -13,7 +13,7 @@ import React from 'react';
  */
 export default function Footer() {
     return (
-        <div className="text-center px-4 pt-4 font-nunito">
+        <div className="fixed bottom-0 left-0 w-full bg-white text-center px-4 pt-4 font-nunito z-40 h-14">
             Made by <a className={`hover:underline text-blue-500`} href={`https://rejaka.me`} target={`_blank`}>rejaka.me</a>, using NextJS and NestJS
         </div>
     );

@@ -39,7 +39,7 @@ export default function Calendar() {
   };
 
   return (
-    <div className="bg-white p-4 rounded mt-4 shadow-md h-96">
+    <div className="bg-white p-4 rounded mt-4 shadow-md h-96 relative">
       <div className="flex justify-between items-center mb-4">
         <button onClick={handlePrevMonth} className="text-gray-600 hover:text-gray-800">
           <FaArrowLeft />

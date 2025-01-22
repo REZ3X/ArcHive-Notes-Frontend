@@ -14,6 +14,7 @@ import FilterComponent from "@/components/filterComponent";
 import TasksButton from "@/components/tasksButton";
 import CommunityButton from "@/components/communityButton";
 import Calendar from "@/components/calendar";
+import AccountComparison from "@/components/accountComparison";
 
 /**
  * ShowOffHome component renders the same layout as the main page
@@ -27,38 +28,48 @@ export default function ShowOffHome() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("");
+  const [showComparison, setShowComparison] = useState(false);
+
+  const handleUpgradeClick = () => {
+    setShowComparison(true);
+  };
+
+  const handleClose = () => {
+    setShowComparison(false);
+  };
 
   return (
     <div className="flex">
-      <div className="fixed left-0 top-0 h-full">
-        <LeftNavDesktop />
+      <div className="fixed left-0 top-0 h-full z-30">
+        <LeftNavDesktop onUpgradeClick={handleUpgradeClick} />
       </div>
-      <div className="ml-64 p-8 w-full relative min-h-screen flex flex-col">
+      <div className={`ml-64 p-8 w-full relative min-h-screen flex flex-col ${showComparison ? 'pointer-events-none opacity-50' : ''}`}>
         <div className="flex justify-between items-center mb-4">
           <div className="flex space-x-4">
-            <SearchBar setSearchQuery={setSearchQuery} />
-            <FilterComponent setFilter={setFilter} />
-            <TasksButton />
-            <CommunityButton />
+            <SearchBar setSearchQuery={setSearchQuery} disabled={showComparison} />
+            <FilterComponent setFilter={setFilter} disabled={showComparison} />
+            <TasksButton disabled={showComparison} />
+            <CommunityButton disabled={showComparison} />
           </div>
           <div className="flex items-center space-x-4">
-            <ThemeToggleButton />
-            <AccountButton />
-            <SettingsButton />
-            <LogoutButton />
+            <ThemeToggleButton disabled={showComparison} />
+            <AccountButton disabled={showComparison} />
+            <SettingsButton disabled={showComparison} />
+            <LogoutButton disabled={showComparison} />
           </div>
         </div>
-        <NotesInput />
-        <div className="flex flex-grow">
+        <NotesInput disabled={showComparison} />
+        <div className="flex z-10 flex-grow">
           <div className="w-2/3 pr-4">
-            <StickyNotesList searchQuery={searchQuery} filter={filter} />
+            <StickyNotesList searchQuery={searchQuery} filter={filter} disabled={showComparison} />
           </div>
           <div className="w-1/3">
-            <Calendar />
+            <Calendar disabled={showComparison} />
           </div>
         </div>
         <Footer />
       </div>
+      {showComparison && <AccountComparison onClose={handleClose} />}
     </div>
   );
 }

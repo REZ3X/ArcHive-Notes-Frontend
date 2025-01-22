@@ -22,8 +22,8 @@ export default function ProjectList() {
 
     return (
         <div>
-            <h2 className="text-xl font-bold mb-4">Projects</h2>
-            <ul className="mt-4">
+            <h2 className="text-xl font-bold mt-[-13px]">Projects</h2>
+            <ul className="mt-2">
                 {projects.map(project => (
                     <li key={project.id} className="text-gray-800 mb-2">
                         {project.title}

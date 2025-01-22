@@ -22,8 +22,8 @@ export default function TasksList() {
 
     return (
         <div>
-            <h2 className="text-xl font-bold mb-4">Tasks</h2>
-            <ul className="mt-4">
+            <h2 className="text-xl font-bold mt-[-13px]">Tasks</h2>
+            <ul className="mt-2">
                 {tasks.map(task => (
                     <li key={task.id} className="text-gray-800 mb-2">
                         <h3 className="text-lg font-semibold">{task.title}</h3>
