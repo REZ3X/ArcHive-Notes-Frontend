@@ -30,12 +30,15 @@ export default function ProjectList() {
     }, []);
 
     return (
-        <ul className="mt-4">
-            {projects.map(project => (
-                <li key={project.id} className="text-gray-800 mb-2">
-                    {project.title}
-                </li>
-            ))}
-        </ul>
+        <div>
+            <h2 className="text-xl font-bold mt-[-13px]">Projects</h2>
+            <ul className="mt-2">
+                {projects.map(project => (
+                    <li key={project.id} className="text-gray-800 mb-2">
+                        {project.title}
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 }

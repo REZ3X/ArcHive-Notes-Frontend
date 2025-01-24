@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaPlusCircle } from 'react-icons/fa';
 import ProjectList from './projectList';
 import TaskList from './tasksList';
 import ProjectAdd from '../projectAdd';

@@ -10,7 +10,7 @@ import StickyNotesList from "@/components/demo/stickyNotesList";
 import AccountButton from "@/components/accountButton";
 import ThemeToggleButton from "@/components/themeToggleButton";
 import SettingsButton from "@/components/settingsButton";
-import FilterComponent from "@/components/filterComponent";
+import FilterComponent from "@/components/demo/filterComponent";
 import TasksButton from "@/components/tasksButton";
 import CommunityButton from "@/components/communityButton";
 import Calendar from "@/components/calendar";
