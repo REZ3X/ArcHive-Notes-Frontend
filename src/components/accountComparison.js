@@ -34,7 +34,7 @@ export default function AccountComparison({ onClose }) {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">Cloud Storage: 150MB</span>
+                  <span className="text-gray-700">Cloud Storage: 50MB</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
@@ -45,7 +45,7 @@ export default function AccountComparison({ onClose }) {
                   <span className="text-gray-700">Public Notes: Up to 3 per week</span>
                 </li>
                 <li className="flex items-center">
-                  <X className="mr-2 h-5 w-5 text-red-500" />
+                  <Check className="mr-2 h-5 w-5 text-green-500" />
                   <span className="text-gray-700">Includes Ads</span>
                 </li>
               </ul>
@@ -62,7 +62,7 @@ export default function AccountComparison({ onClose }) {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Check className="mr-2 h-5 w-5 text-yellow-400" />
-                  <span className="text-gray-100">Cloud Storage: Up to 1GB</span>
+                  <span className="text-gray-100">Cloud Storage: Up to 200MB</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 h-5 w-5 text-yellow-400" />

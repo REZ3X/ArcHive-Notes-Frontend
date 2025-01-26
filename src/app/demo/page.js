@@ -15,6 +15,7 @@ import TasksButton from "@/components/tasksButton";
 import CommunityButton from "@/components/communityButton";
 import Calendar from "@/components/calendar";
 import AccountComparison from "@/components/accountComparison";
+import ExpandedNote from "@/components/demo/expandedNote";
 
 /**
  * ShowOffHome component renders the same layout as the main page
@@ -29,13 +30,22 @@ export default function ShowOffHome() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("");
   const [showComparison, setShowComparison] = useState(false);
+  const [expandedNote, setExpandedNote] = useState(null);
 
   const handleUpgradeClick = () => {
     setShowComparison(true);
   };
 
-  const handleClose = () => {
+  const handleCloseComparison = () => {
     setShowComparison(false);
+  };
+
+  const handleNoteClick = (note) => {
+    setExpandedNote(note);
+  };
+
+  const handleCloseNote = () => {
+    setExpandedNote(null);
   };
 
   return (
@@ -61,7 +71,7 @@ export default function ShowOffHome() {
         <NotesInput disabled={showComparison} />
         <div className="flex z-10 flex-grow">
           <div className="w-2/3 pr-4">
-            <StickyNotesList searchQuery={searchQuery} filter={filter} disabled={showComparison} />
+            <StickyNotesList searchQuery={searchQuery} filter={filter} onNoteClick={handleNoteClick} disabled={showComparison} />
           </div>
           <div className="w-1/3">
             <Calendar disabled={showComparison} />
@@ -69,7 +79,8 @@ export default function ShowOffHome() {
         </div>
         <Footer />
       </div>
-      {showComparison && <AccountComparison onClose={handleClose} />}
+      {showComparison && <AccountComparison onClose={handleCloseComparison} />}
+      {expandedNote && <ExpandedNote note={expandedNote} onClose={handleCloseNote} />}
     </div>
   );
 }

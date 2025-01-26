@@ -42,13 +42,13 @@ export default function ComingSoonCommunity() {
         </button>
         <button
           onClick={() => handleTabClick('leaderboard')}
-          className={`px-4 py-2 rounded-t-lg ${activeTab === 'leaderboard' ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-800'} hover:bg-gray-700`}
+          className={`px-4 py-2 rounded-t-lg ${activeTab === 'leaderboard' ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-600'} hover:bg-gray-700`}
         >
           Leaderboard
         </button>
         <button
           onClick={() => handleTabClick('trainYourType')}
-          className={`px-4 py-2 rounded-t-lg ${activeTab === 'trainYourType' ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-800'} hover:bg-gray-700`}
+          className={`px-4 py-2 rounded-t-lg ${activeTab === 'trainYourType' ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-600'} hover:bg-gray-700`}
         >
           Train Your Typing
         </button>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectList from '../projectList';
-import TaskList from '../tasksList';
+import TaskList from '../tasksList'; // Coming soon
 import ProjectAdd from '../projectAdd';
 import PublicNotesButton from '../publicNotesButton';
 import UpgradeToPremiumButton from '../upgradePremiumButton';
@@ -23,7 +23,6 @@ export default function LeftNavDesktop({ onUpgradeClick }) {
         <ProjectAdd />
         <div className="gap-3 flex flex-col">
           <ProjectList />
-          <TaskList />
         </div>
       </div>
       <div className="flex flex-col gap-3 mb-6">
